@@ -4,7 +4,7 @@
 ?>
 
 <div class="container">
-  <h2>This is the projects page.</h2>
+  <h5>Projects</h5>
 </div>
 
 <?php include('templates/footer.php');

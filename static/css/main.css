@@ -12,10 +12,41 @@ body {
   flex-direction: column;
 }
 
+/* Main Styles */
 main {
   flex: 1;
 }
 
+/* TaskBoard Styles */
+header {
+  /* border: 1px grey solid; */
+  margin-top: 2rem;
+}
+
+.input-field .prefix.right {
+  right: 0;
+}
+
+.prefix:hover {
+  cursor: pointer;
+}
+
+.new-task-title {
+  max-width: 30%;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+}
+
+.new-task-description {
+  max-width: 30%;
+  margin: 0 auto;
+}
+
+/* Footer */
 .footer-area {
   background-color: teal;
+}
+
+.projectName {
+  display: none;
 }

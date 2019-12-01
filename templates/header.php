@@ -17,6 +17,7 @@
     
     <div class="container">
       <a href="/" class="brand-logo pam-logo">PAM</a>
+      <a href="#" class="brand-logo grey-text"><?= $title ?></a>
       <ul id="nav-mobile" class="right hide-on-small-and-down">
         <li><a href="#" class="btn pma-add z-depth-0">Add Task</a></li>
         <li><a href="index.php" class="btn pma-add z-depth-0">Tasks</a></li>

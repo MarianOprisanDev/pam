@@ -4,24 +4,24 @@
   <div class="container">
     <div class="row">
       <div class="col l6 s12">
-        <h5 class="white-text">Footer Content</h5>
-        <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+        <h5 class="white-text">Mobile App</h5>
+        <p class="grey-text text-lighten-4">There is a mobile app to interface with your tasks and projects.</p>
+        <p>You can download the app <a href="@">here</a></p>
       </div>
       <div class="col l4 offset-l2 s12">
-        <h5 class="white-text">Links</h5>
+        <h5 class="white-text">See also</h5>
         <ul>
-          <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-          <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-          <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-          <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+          <li><a class="grey-text text-lighten-3" href="#!">Documentation Page</a></li>
+          <li><a class="grey-text text-lighten-3" href="#!">Desktop App</a></li>
+          <li><a class="grey-text text-lighten-3" href="#!">Command-line Tool</a></li>
         </ul>
       </div>
     </div>
   </div>
   <div class="footer-copyright">
     <div class="container">
-    © 2014 Copyright Text
-    <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+    © 2019 PAM: Personal Activity Manager
+    <a class="grey-text text-lighten-4 right hide-on-small-only" href="#!">Creator: Marian Oprisan</a>
     </div>
   </div>
 </footer>
