@@ -32,14 +32,25 @@ header {
 }
 
 .new-task-title {
-  max-width: 30%;
+  max-width: 50%;
   margin: 0 auto;
   margin-bottom: 1rem;
 }
 
 .new-task-description {
-  max-width: 30%;
+  max-width: 50%;
   margin: 0 auto;
+}
+
+.card-content h6 {
+	height: 3rem;
+	overflow: hidden;
+}
+
+.card-description {
+	margin-top: 0.8rem;
+	height: 3rem;
+	overflow: hidden;
 }
 
 /* Footer */
@@ -50,3 +61,6 @@ header {
 .projectName {
   display: none;
 }
+
+/* Media Queries */
+@media ()

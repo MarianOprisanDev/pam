@@ -1,10 +1,19 @@
 // This is the javaScript file for PAM
-// alert(1);
-console.log('Javascript file loaded.');
+// Hiding elements
+document.getElementById('task-submit').style.display = 'none';
 
 function addTask() {
-  document.getElementById("addTask").submit();
-  document.getElementById("addTask").reset();
+  let taskTitle = document.getElementById("task-title");
+  let taskDescription = document.getElementById("task-description");
+
+  // if (taskDescription.value == "" || taskTitle.value == "") {
+  //   console.log('TODO: add flash message')
+  // } else {
+  //   // simulate clicking the submit button
+  //   document.getElementById("task-submit").click();
+  // }
+  // document.getElementById("addTask").reset();
+  document.getElementById("task-submit").click();
 }
 
 function setProject(projectName) {
@@ -18,3 +27,6 @@ document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.dropdown-trigger');
     var instances = M.Dropdown.init(elems);
   });
+
+
+  console.log('Javascript file loaded.');
