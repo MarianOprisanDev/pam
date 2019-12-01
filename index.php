@@ -2,7 +2,20 @@
 
 	include('config/db_connection.php');
 
-  // quering all tasks for the user
+	if(isset($_POST['delete'])) {
+		$id_to_delete = mysqli_real_escape_string($conn, $_POST['delete_id']);
+		
+		$sql = "DELETE FROM tasks WHERE id = $id_to_delete";
+
+		if(mysqli_query($conn, $sql)) {
+			// success
+			header('Location: index.php');
+		} else {
+			echo 'query error: ' . mysqli_error($conn);
+		}
+	}
+	
+	// quering all tasks for the user
   // TODO: after implementing login, use the logged user's id
   $sql = 'SELECT id, title, description, completed FROM tasks WHERE user_id = 1 ORDER BY date_created';
   $result = mysqli_query($conn, $sql);
@@ -121,13 +134,31 @@
 								<div class='card-description'><?php echo htmlspecialchars($task['description']); ?></div>
 							</div>
 							<div class="card-action right-align">
-								<a href="#" class="grey-text">
+								<a class="waves-effect waves-light modal-trigger" href="#modal<?php echo $task['id']; ?>">
 									More info
 									<span class="badge teal"><?php echo $projectId ?></span>
+								</a>
 								</a>
 							</div>
 						</div>
 					</div>
+
+					<!-- Details Modal for the task -->
+					<div id="modal<?php echo $task['id']; ?>" class="modal">
+						<div class="modal-content">
+							<h4><?php echo $task['title']; ?></h4>
+							<p><?php echo $task['description']; ?></p>
+						</div>
+						<div class="modal-footer">
+							<!-- Hidden form for deleting the task -->
+							<form action="index.php" method="POST" class="delete-task-form">
+								<input type="hidden" name="delete_id" value="<?php echo $task['id']; ?>">
+								<input type="submit" value="Got it" class="modal-close waves-effect waves-green btn-flat white darken-2">
+								<input type="submit" name="delete" value="Delete Task" class="modal-close waves-effect waves-white btn-flat red lighten-2 modal-task-delete">
+							</form>
+						</div>
+					</div>
+
 				<?php endforeach ?>
 			</div>
 		</div>

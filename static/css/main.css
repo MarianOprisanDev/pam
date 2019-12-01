@@ -53,6 +53,14 @@ header {
 	overflow: hidden;
 }
 
+.delete-task-form {
+	display: inline-block;
+}
+
+.modal-task-delete {
+	margin-left: 15px;
+}
+
 /* Footer */
 .footer-area {
   background-color: teal;

@@ -1,6 +1,6 @@
 <?php
 // connect to database
-$conn = mysqli_connect('localhost', 'pamweb', 'password', 'pam');
+$conn = mysqli_connect('192.168.0.200', 'pamweb', 'password', 'pam');
 
 // check database connection
 if (!$conn) {
