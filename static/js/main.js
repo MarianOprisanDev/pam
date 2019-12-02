@@ -22,6 +22,11 @@ function setProject(projectName) {
   document.getElementById('task-project').value = projectName;
 
 }
+// TODO: check options for all M elements
+document.addEventListener('DOMContentLoaded', function() {
+	var elems = document.querySelectorAll('.sidenav');
+	var instances = M.Sidenav.init(elems);
+});
 
 document.addEventListener('DOMContentLoaded', function() {
 	var elems = document.querySelectorAll('.dropdown-trigger');
@@ -32,5 +37,6 @@ document.addEventListener('DOMContentLoaded', function() {
 	var elems = document.querySelectorAll('.modal');
 	var instances = M.Modal.init(elems);
 });
+
 
   console.log('Javascript file loaded.');

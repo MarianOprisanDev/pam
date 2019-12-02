@@ -23,6 +23,14 @@ header {
   margin-top: 2rem;
 }
 
+.nav-wrapper {
+	margin: 0 3rem;
+}
+
+/* Expandable Search Form */
+/* TODO: Add from https://codepen.io/todar/pen/XYgwmg */
+
+
 .input-field .prefix.right {
   right: 0;
 }
