@@ -31,7 +31,14 @@
 			<a href="#!" class="brand-logo grey-text text-darken-2"><?= $title ?></a>
 			<a href="#" data-target="mobile-demo" class="sidenav-trigger grey-text text-darken-2"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
-				<li><a href="sass.html"><i class="material-icons grey-text text-darken-2">search</i></a></li>
+				<!-- <li><a href="sass.html"><i class="material-icons grey-text text-darken-2">search</i></a></li> -->
+				<li>
+				<form action="" class="browser-default right">
+					<input id="search-input" placeholder="Search" type="text" class="browser-default search-field" name="q" value="" autocomplete="off" aria-label="Search box">
+					<label for="search-input"><i class="material-icons search-icon">search</i></label> 
+					<i class="material-icons search-close-icon">cancel</i>
+				</form>
+			</li>
         <li><a href="/index.html"><i class="material-icons grey-text text-darken-2">view_module</i></a></li>
         <li><a href="/index.php"><i class="material-icons grey-text text-darken-2">refresh</i></a></li>
         <li><a href="#!" class="dropdown-trigger" data-target='dropdown-nav-more'><i class="material-icons grey-text text-darken-2">more_vert</i></a></li>
@@ -56,5 +63,4 @@
     <li><a href="collapsible.html">Javascript</a></li>
     <li><a href="mobile.html">Mobile</a></li>
   </ul>
-
   <main>

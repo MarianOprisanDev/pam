@@ -124,15 +124,20 @@
 		
     </div>
 		<div class="container">
-		  <div class="row">
+		  <div class="row" id="tasks-list-collection">
 			  <?php foreach($tasks as $task): ?>
-				  <div class="col s6 m3">
+				  <div class="col s6 m3 task-card">
 						<div class="card hoverable z-depth-1">
 							<div class="card-content center">
 								<h6><?php echo htmlspecialchars($task['title']); ?></h6>
 								<div class="divider" tabindex="-1"></div>
 								<div class='card-description'><?php echo htmlspecialchars($task['description']); ?></div>
 							</div>
+							<aside class="hide search-string">
+								<span class="search-content">
+								<?= htmlspecialchars($task['title'])?><?=htmlspecialchars($task['description']);?>
+								</span>
+							</aside>
 							<div class="card-action right-align">
 								<a class="waves-effect waves-light modal-trigger" href="#modal<?php echo $task['id']; ?>">
 									More info

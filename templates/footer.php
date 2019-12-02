@@ -28,5 +28,6 @@
 
 <script type="text/javascript" src="static/js/materialize.min.js"></script>
 <script src="static/js/main.js"></script>
+<script src="static/js/searchFilter.js"></script>
 </body>
 </html>

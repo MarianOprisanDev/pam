@@ -3,7 +3,8 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway:400,600&display=swap');
 
 html {
-  font-family: 'Raleway', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	font-family: 'Raleway', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; overflow-y: scroll;
+	
 }
 
 body {
@@ -27,6 +28,7 @@ header {
 	margin: 0 3rem;
 }
 
+
 /* Expandable Search Form */
 /* TODO: Add from https://codepen.io/todar/pen/XYgwmg */
 
@@ -48,6 +50,10 @@ header {
 .new-task-description {
   max-width: 50%;
   margin: 0 auto;
+}
+
+.task-card {
+	transition: display 0s, opacity 0.5s linear;
 }
 
 .card-content h6 {
@@ -79,4 +85,96 @@ header {
 }
 
 /* Media Queries */
-@media ()
+
+
+/* html { margin-left: calc(100vw - 100%); } */
+
+nav form {
+  position: relative;
+  height: 100%;
+  background: inherit;
+}
+.nav-wrapper{
+  background: inherit;
+  
+}
+
+input.search-field {
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.54);
+  border-radius: 2px;
+  border: 0;
+  border-radius: 5px;
+  height: 36px;
+  padding: 8px 8px 8px 60px;
+  width: 200px;
+  background: #f7f7f7;
+  transition: background 0.2s, width .2s;
+}
+input.search-field:hover {
+  background: #ebebeb;
+}
+.searchbox {
+  position: relative;
+}
+
+input.search-field:focus {
+  outline: none;
+  width: 500px;
+  color: #212121;
+}
+
+input.search-field:focus:hover {
+  background: #f7f7f7;
+}
+
+.search-icon {
+  position: absolute;
+  top: 0;
+  padding-left: 20px;
+  color: rgba(0, 0, 0, 0.54);
+}
+
+@media only screen and (max-width: 600px) {
+  
+  nav form {
+/*     left: calc(90vw - 100%); */
+  }
+  
+  ::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: transparent;
+  }
+
+	/* .hidden-card {
+		display: hidden !important;
+	} */
+
+  input.search-field {
+    width: 1px;
+    margin-right: 0px;
+    padding: 8px 25px;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+  }
+
+  .search-icon {
+    top: 0;
+    padding-left: 15px;
+    color: rgba(0, 0, 0, 0.54);
+  }
+
+  input.search-field:focus {
+    margin-right: 0px;
+    width: 100vw;
+    padding: 8px 8px 8px 50px;
+  }
+
+  input.search-field:focus ~ .search-popup {
+    width: 100vw;
+  }
+
+  nav .nav-wrapper {
+    margin-right: 0px;
+  }
+}
