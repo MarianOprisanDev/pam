@@ -71,6 +71,10 @@ header {
 	display: inline-block;
 }
 
+.task-modal-title {
+	padding: 5px;
+}
+
 .modal-task-delete {
 	margin-left: 15px;
 }
@@ -141,14 +145,14 @@ input.search-field:focus:hover {
 /*     left: calc(90vw - 100%); */
   }
   
-  ::placeholder {
-    /* Chrome, Firefox, Opera, Safari 10.1+ */
+  /* ::placeholder {
     color: transparent;
-  }
+  } */
 
 	/* .hidden-card {
 		display: hidden !important;
 	} */
+	
 
   input.search-field {
     width: 1px;

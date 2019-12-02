@@ -3,7 +3,8 @@
 	include('config/db_connection.php');
 
 	if(isset($_POST['delete'])) {
-		$id_to_delete = mysqli_real_escape_string($conn, $_POST['delete_id']);
+		// TODO: really check if the current user is allowed to delete the post first
+		$id_to_delete = mysqli_real_escape_string($conn, $_POST['modal_task_id']);
 		
 		$sql = "DELETE FROM tasks WHERE id = $id_to_delete";
 
@@ -13,6 +14,36 @@
 		} else {
 			echo 'query error: ' . mysqli_error($conn);
 		}
+	}
+	
+	if(isset($_POST['update'])) {
+		// TODO: really check if the current user is allowed to change the post first
+		
+		try
+		{
+			$stmt = $conn->prepare("UPDATE tasks SET title = '?', description = '?' WHERE id = ?");
+			$stmt->bind_param("ssi", $new_title, $new_description, $id_to_update);
+			$id_to_update = mysqli_real_escape_string($conn, $_POST['modal_task_id']);
+			$new_title = mysqli_real_escape_string($conn, $_POST['modal_task_title']);
+			$new_description = mysqli_real_escape_string($conn, $_POST['modal_task_description']);
+			$stmt->execute();
+		}
+		catch( mysqli_sql_exception $e )
+		{
+				echo $e->getMessage();
+				die;
+		}
+		header('Location: index.php');
+		$stmt->close();
+
+	// 	if(mysqli_query($conn, $stmt)) {
+	// 		// success
+	// 		header('Location: index.php');
+	// 	} else {	
+	// 		echo 'query error: ' . mysqli_error($conn);
+	// 	}
+
+	// 	$stmt->close();
 	}
 	
 	// quering all tasks for the user
@@ -151,14 +182,17 @@
 					<!-- Details Modal for the task -->
 					<div id="modal<?php echo $task['id']; ?>" class="modal">
 						<div class="modal-content">
-							<h4><?php echo $task['title']; ?></h4>
-							<p><?php echo $task['description']; ?></p>
+							<h5 class="task-modal-title" contenteditable="true" spellcheck="false" oninput="modalTitleEdit()"><?php echo $task['title']; ?></h5>
+							<p class="task-modal-details" contenteditable="true" spellcheck="false" oninput="modalDescriptionEdit()"><?php echo $task['description']; ?></p>
 						</div>
 						<div class="modal-footer">
-							<!-- Hidden form for deleting the task -->
+							<!-- Hidden form for deleting/editing the task -->
 							<form action="index.php" method="POST" class="delete-task-form">
-								<input type="hidden" name="delete_id" value="<?php echo $task['id']; ?>">
-								<input type="submit" value="Got it" class="modal-close waves-effect waves-green btn-flat white darken-2">
+								<input type="hidden" name="modal_task_id" value="<?php echo $task['id']; ?>">
+								<input type="hidden" name="modal_task_title" value="">
+								<input type="hidden" name="modal_task_description" value="">
+								<input type="submit" value="Got it" class="modal-close waves-effect waves-green btn-flat white darken-2 modal-task-close">
+								<input type="submit" name="update" value="Update Task" class="modal-close waves-effect waves-green btn-flat yellow darken-2 modal-task-update">
 								<input type="submit" name="delete" value="Delete Task" class="modal-close waves-effect waves-white btn-flat red lighten-2 modal-task-delete">
 							</form>
 						</div>
