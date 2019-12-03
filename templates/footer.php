@@ -31,5 +31,6 @@
 <script src="static/js/searchFilter.js"></script>
 <script src="static/js/navbarSearch.js"></script>
 <script src="static/js/events.js"></script>
+<script src="static/js/animations.js"></script>
 </body>
 </html>

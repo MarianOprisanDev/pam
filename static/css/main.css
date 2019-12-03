@@ -28,6 +28,43 @@ header {
 	margin: 0 3rem;
 }
 
+.db-badge {
+	display: inline-block;
+	position: relative;
+	top: -3px;
+	left: -6px;
+	height: 10px;
+	width: 10px;
+	border-radius: 50%;
+	/* background-color: #FF3081;
+	background-color: g; */
+	/* z-index: 1; */
+}
+
+.notification-icon--fixed {
+  position: relative;
+  color: #fff;
+  background-color: #FF3081;
+  border-radius: 50%;
+  font-family: "Roboto";
+  
+  /* Alignment */
+  line-height: 0;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  
+  /* Adjust as required: */
+  padding: 10px;
+}
+
+/* Height = width */
+.notification-icon--fixed::after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+
 
 /* Expandable Search Form */
 /* TODO: Add from https://codepen.io/todar/pen/XYgwmg */
@@ -55,6 +92,30 @@ header {
 .task-card {
 	transition: display 0s, opacity 0.5s linear;
 }
+
+#tasks-list-collection {
+	font-size: 0.8rem;
+}
+
+/* .card:hover {
+	display: absolute;
+	min-width: 500px;
+	min-height: 300px;
+	z-index: 2;
+	margin-bottom: -3px;
+} */
+
+/* #tasks-list-collection .task-card:first-child .card {
+	height: auto;
+	width: auto;
+	min-height: 300px;
+	min-width: 500px;
+	z-index: 5;
+	opacity: 0.9;
+	display: relative;
+	left: -100px;
+	overflow: hidden;
+} */
 
 .card-content h6 {
 	height: 3rem;
@@ -113,7 +174,7 @@ input.search-field {
   padding: 8px 8px 8px 60px;
   width: 200px;
   background: #f7f7f7;
-  transition: background 0.2s, width .2s;
+  transition: background 0.5s, width .5s;
 }
 input.search-field:hover {
   background: #ebebeb;

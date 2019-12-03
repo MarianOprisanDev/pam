@@ -146,7 +146,7 @@
 		  <div class="row" id="tasks-list-collection">
 			  <?php foreach($tasks as $task): ?>
 				  <div class="col s6 m3 task-card">
-						<div class="card hoverable z-depth-1">
+						<div class="card hoverable z-depth-1" onClick="cardExpand(this)">
 							<div class="card-content center">
 								<h6><?php echo htmlspecialchars($task['title']); ?></h6>
 								<div class="divider" tabindex="-1"></div>
