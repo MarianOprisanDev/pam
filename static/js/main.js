@@ -38,4 +38,9 @@ document.addEventListener('DOMContentLoaded', function() {
 	var instances = M.Modal.init(elems);
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.tooltipped');
+    var instances = M.Tooltip.init(elems);
+  });
+
 console.log('Javascript file loaded.');

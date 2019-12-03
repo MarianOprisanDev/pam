@@ -41,7 +41,7 @@
 			</li>
         <li><a href="/index.html"><i class="material-icons grey-text text-darken-2">view_module</i></a></li>
         <li><a href="/index.php"><i class="material-icons grey-text text-darken-2">refresh</i></a></li>
-        <li><a href=""><i class="material-icons grey-text text-darken-2">dns<span class="db-badge <?php echo ($db_location == 'none' ? 'red' : 'green') ?>"></span></i></a></li>
+        <li><a href="" class="tooltipped" data-position="bottom" data-tooltip="Connected to: <?php echo $db_location ?>"><i class="material-icons grey-text text-darken-2">dns<span class="db-badge <?php echo ($db_location == 'none' ? 'red' : 'green') ?>"></span></i></a></li>
         <li><a href="#!" class="dropdown-trigger" data-target='dropdown-nav-more'><i class="material-icons grey-text text-darken-2">more_vert</i></a></li>
 			</ul>
 			
