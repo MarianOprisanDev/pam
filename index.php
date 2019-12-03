@@ -19,31 +19,19 @@
 	if(isset($_POST['update'])) {
 		// TODO: really check if the current user is allowed to change the post first
 		
-		try
-		{
-			$stmt = $conn->prepare("UPDATE tasks SET title = '?', description = '?' WHERE id = ?");
-			$stmt->bind_param("ssi", $new_title, $new_description, $id_to_update);
-			$id_to_update = mysqli_real_escape_string($conn, $_POST['modal_task_id']);
-			$new_title = mysqli_real_escape_string($conn, $_POST['modal_task_title']);
-			$new_description = mysqli_real_escape_string($conn, $_POST['modal_task_description']);
-			$stmt->execute();
-		}
-		catch( mysqli_sql_exception $e )
-		{
-				echo $e->getMessage();
-				die;
-		}
-		header('Location: index.php');
-		$stmt->close();
+		$id_to_update = mysqli_real_escape_string($conn, $_POST['modal_task_id']);
+		$new_title = mysqli_real_escape_string($conn, $_POST['modal_task_title']);
+		$new_description = mysqli_real_escape_string($conn, $_POST['modal_task_description']);
+		
+		$sql = "UPDATE tasks SET title = '$new_title', description = '$new_description' WHERE id = $id_to_update";
 
-	// 	if(mysqli_query($conn, $stmt)) {
-	// 		// success
-	// 		header('Location: index.php');
-	// 	} else {	
-	// 		echo 'query error: ' . mysqli_error($conn);
-	// 	}
+		if(mysqli_query($conn, $sql)) {
+			// success
+			header('Location: index.php');
+		} else {
+			echo 'query error: ' . mysqli_error($conn);
+		}
 
-	// 	$stmt->close();
 	}
 	
 	// quering all tasks for the user
